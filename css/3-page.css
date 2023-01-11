@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --white-color: #fff;
+    --dark-color: #222;
+    --body-bg-color: #fff;
+    --section-bg-color: #202834;
+    --navigation-items-hover-color: #3b5378;
+
+    --text-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 5px 25px rgba(0, 0, 0/ 20%);
+
+    --scroll-bar-color: #fff;
+    --scroll-thumb-color: #282f4e;
+    --scroll-thumb-hover-color: #454f6b;
+}
+
+/* ====== scroll bar ======= */
+::-webkit-scrollbar {
+    width: 11px;
+    background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: var(--scroll-thumb-color);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-thumb-hover-color);
+}
+
+/* ====== main css ======= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    height: 100vh;
+    font-family: "Raleway", sans-serif;
+    background: #2F3238;
+}
+
+/* header */
+header {
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: calc(5rem+1rem);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease;
+    transition-property: height, background;
+}
+
+header.sticky {
+    height: calc(2.5rem+1rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .nav-bar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    transition: 0.3s ease;
+}
+
+.nav-close-btn,
+.nav-menu-btn {
+    display: none;
+}
+
+.nav-bar .logo {
+    color: var(--white-color);
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    float: left;
+    max-height: 55px;
+    padding: 5px;
+}
+
+.navigation .nav-items a {
+    /*  */
+    position: relative;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    /*  */
+    color: var(--white-color);
+    font-size: 1em;
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+}
+
+/* .navigation .nav-items a i {
+     display: none; 
+} */
+
+.navigation .nav-items a:not(:last-child) {
+    margin-right: 45px;
+}
+
+header .navigation .nav-items a:before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .nav-items a:hover:before {
+    width: 100%;
+}
+
+/* header */
+.hightt {
+    height: 40px;
+}
+
+.container {
+    margin: 30px;
+    /* top: 0px; */
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image {
+    background: #c1c1c1;
+    position: relative;
+    flex: 100%;
+    max-width: 460PX;
+    height: 300PX;
+    margin: 20PX;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.image img {
+    opacity: 0.8;
+    position: relative;
+    vertical-align: top;
+    transition: 0.6s;
+    transition-property: opacity;
+}
+
+.image:hover img {
+    opacity: 1;
+    background: rgb(11, 11, 11);
+}
+
+.image .details {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: rgba(255, 255, 255, 0.714);
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.image .details h2 {
+    text-align: center;
+    font-size: 32.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 30px;
+    transition: 0.4s;
+    transition-property: transform;
+}
+
+.image .details h2 span {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.image:hover .details h2 {
+    transform: translateY(-30px);
+    color: #fff;
+}
+
+.image .details p {
+    margin: 30px 30px 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+    transition-property: opacity, transform;
+}
+
+.image:hover .details p {
+    opacity: 1;
+    transform: translateX(-40px);
+}
+
+.more {
+    position: absolute;
+    background: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    bottom: -60px;
+    transition: 0.6s;
+    transition-property: bottom;
+}
+
+.image:hover .more {
+    bottom: 100;
+}
+
+.more .read-more {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.more .read-more span {
+    font-weight: 900;
+}
+
+.more .icon-links i {
+    color: #000;
+    font-size: 20px;
+}
+
+.more .icon-links i:hover{
+    color: rgb(255, 5, 5);
+    font-size: 20px;
+}
+
+.more .icon-links a:not(:last-child) i {
+    margin-right: 20px;
+}
+
+@media (max-width: 1500px) {
+    .image {
+        flex: 100%;
+        max-width: 480px;
+    }
+
+}

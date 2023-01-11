@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website landing page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="brand">CAMPING</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">首頁</a>
+                <a href="#">營地推薦</a>
+                <a href="#">產品</a>
+                <a href="#">遊戲區</a>
+                <a href="#">連結</a>
+            </div>
+        </div>
+    </header>
+    <section class="home">
+        <video class="video-slide active" src="./mida/Camping media 01.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./mida/Camping media 02.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./mida/Camping media 03.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./mida/Camping media 04.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="./mida/海岸空2.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>camping.<br><span>life</span></h1>
+            <p>
+                啟發我們探索，發掘及揭開台灣最深層秘密的靈感來自那些等著我們
+                不計其數的大自然的奧秘
+
+                東海岸山脈是我們海濱生態營地最完美的背景
+                從舒適的樹帳篷醒來第一眼只會看見壯觀的日出和毫無遮蔽的太平洋美景
+                -懸浮在大地的自然輪廓之上
+
+                發掘隱藏的瀑布，在秘密的礁岩泳池裡浮潛，涉足原始溪流，徜徉在無人的海邊享受一道道的浪花以及航行至無人之境
+                無論你是年輕人或擁有一顆年輕的心，加入我們，一起找尋你的完美探險之旅吧！
+
+            </p>
+            <a href="#">Read More</a>
+        </div>
+
+
+        <div class="content">
+            <h1>camping.<br><span>life</span></h1>
+            <p>
+                啟發我們探索，發掘及揭開台灣最深層秘密的靈感來自那些等著我
+            </p>
+            <a href="#">Read More</a>
+        </div>
+
+
+        <div class="content">
+            <h1>camping.<br><span>life</span></h1>
+            <p>
+                啟發我們探索，發掘及揭開台灣最深層秘密的靈感來自那些等著我
+            </p>
+            <a href="#">Read More</a>
+        </div>
+
+
+        <div class="content">
+            <h1>camping.<br><span>life</span></h1>
+            <p>
+                啟發我們探索，發掘及揭開台灣最深層秘密的靈感來自那些等著我
+            </p>
+            <a href="#">Read More</a>
+        </div>
+
+
+        <div class="content">
+            <h1>camping.<br><span>life</span></h1>
+            <p>
+                啟發我們探索，發掘及揭開台灣最深層秘密的靈感來自那些等著我
+            </p>
+            <a href="#">Read More</a>
+        </div>
+
+        
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+//影片function
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+        
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
